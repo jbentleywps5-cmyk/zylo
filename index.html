@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<meta name="description" content="ChimeraMC premium client access. Monthly and lifetime plans with secure checkout.">
+<title>ChimeraMC</title>
+<style>
+:root{--bg:#08090d;--panel:#11131b;--panel2:#171a25;--text:#f7f8ff;--muted:#9ca3b8;--line:rgba(255,255,255,.09);--p:#9b5cff;--b:#4d8dff;--g:#70e6b6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% -10%,rgba(155,92,255,.23),transparent 34%),radial-gradient(circle at 85% 10%,rgba(77,141,255,.18),transparent 28%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 34px));margin:auto}
+nav{position:sticky;top:0;z-index:20;padding:14px 0;background:rgba(8,9,13,.72);backdrop-filter:blur(18px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 16px;border:1px solid var(--line);border-radius:18px;background:rgba(17,19,27,.72)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}.logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--p),var(--b));font-weight:1000}
+.links{display:flex;align-items:center;gap:5px}.links a{padding:10px 13px;color:var(--muted);border-radius:11px}.links a:hover{background:rgba(255,255,255,.05);color:#fff}
+.btn{border:1px solid var(--line);background:rgba(255,255,255,.055);color:#fff;border-radius:14px;min-height:48px;padding:0 18px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.18s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.085)}.primary{border:0;background:linear-gradient(135deg,var(--p),var(--b));box-shadow:0 14px 34px rgba(91,78,255,.24)}
+.hero{min-height:700px;display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:60px;padding:80px 0 95px}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 11px;border:1px solid rgba(155,92,255,.28);background:rgba(155,92,255,.09);border-radius:999px;font-size:.86rem;font-weight:800;color:#ddd2ff}.dot{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 14px rgba(112,230,182,.8)}
+h1{font-size:clamp(3.4rem,7vw,7rem);line-height:.9;letter-spacing:-.065em;margin:22px 0}.grad{background:linear-gradient(110deg,#fff,#c5aaff 48%,#74b7ff 78%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p,.section p{color:var(--muted);line-height:1.75}.hero p{font-size:1.08rem;max-width:630px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+.visual{min-height:480px;display:grid;place-items:center;position:relative}.glow{position:absolute;width:360px;height:360px;border-radius:50%;background:conic-gradient(var(--p),var(--b),#55e6ff,#ff61bb,var(--p));filter:blur(70px);opacity:.26}
+.cardlogo{width:min(410px,92%);aspect-ratio:1;border-radius:34px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(25,28,42,.92),rgba(10,11,17,.8));border:1px solid var(--line);box-shadow:0 28px 90px rgba(0,0,0,.45);position:relative}.cardlogo img{width:72%;height:72%;object-fit:contain;filter:drop-shadow(0 24px 34px rgba(83,83,255,.24))}.fallback{font-size:8rem;font-weight:1000}
+section{padding:84px 0}.section h2{font-size:clamp(2.1rem,4vw,3.6rem);letter-spacing:-.05em;margin:10px 0 12px}.section-head{max-width:740px;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature,.price,.step,.faq details{border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,20,30,.9),rgba(10,11,17,.77));border-radius:24px}.feature{padding:26px;min-height:210px}.feature b{display:block;font-size:1.08rem;margin-bottom:9px}.feature p{font-size:.94rem;margin:0}
+.prices{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:28px;border:1px solid var(--line);border-radius:32px;background:rgba(14,16,24,.72)}.price{padding:28px;position:relative}.popular{border-color:rgba(155,92,255,.45);box-shadow:inset 0 0 0 1px rgba(155,92,255,.08)}.badge{position:absolute;right:20px;top:20px;font-size:.75rem;font-weight:900;padding:7px 10px;border-radius:999px;background:rgba(155,92,255,.13);border:1px solid rgba(155,92,255,.3)}
+.plan{color:var(--muted);font-weight:800}.money{font-size:3.4rem;font-weight:950;letter-spacing:-.05em;margin:8px 0}.money span{font-size:.95rem;color:var(--muted);font-weight:700;letter-spacing:0}.checks{display:grid;gap:10px;margin:20px 0 25px;color:#d5d8e5}.checks div:before{content:"✓";color:var(--g);font-weight:900;margin-right:9px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:25px}.step h3{margin:0 0 9px}.step p{margin:0}
+.faq{display:grid;gap:11px}.faq details{padding:18px 20px}.faq summary{cursor:pointer;font-weight:850}.faq p{margin:12px 0 0}
+footer{padding:28px 0 38px;color:var(--muted);border-top:1px solid var(--line)}.footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.modal{position:fixed;inset:0;display:none;place-items:center;z-index:100;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);padding:18px}.modal.open{display:grid}.checkout{width:min(520px,100%);border:1px solid var(--line);border-radius:28px;background:#10121a;box-shadow:0 30px 100px rgba(0,0,0,.65);padding:26px}.checkout-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.checkout h3{font-size:1.7rem;margin:0}.close{border:0;background:rgba(255,255,255,.07);color:#fff;width:38px;height:38px;border-radius:12px;font-size:1.2rem;cursor:pointer}.summary{margin:20px 0;padding:16px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:16px;display:flex;justify-content:space-between;gap:12px}.field{margin-top:14px}.field label{display:block;font-size:.84rem;color:var(--muted);font-weight:800;margin-bottom:7px}.field input{width:100%;min-height:48px;border:1px solid var(--line);background:#0b0d13;color:#fff;border-radius:13px;padding:0 14px;font-size:1rem;outline:none}.field input:focus{border-color:rgba(155,92,255,.55);box-shadow:0 0 0 3px rgba(155,92,255,.08)}.safe{font-size:.82rem;color:var(--muted);line-height:1.55;margin:14px 0}.wide{width:100%}
+@media(max-width:850px){.links a:not(.shop){display:none}.hero{grid-template-columns:1fr;gap:20px;padding-top:55px}.visual{min-height:390px}.grid,.steps{grid-template-columns:1fr}.prices{grid-template-columns:1fr;padding:16px}.hero{min-height:auto}section{padding:62px 0}}
+@media(max-width:520px){.wrap{width:min(100% - 22px,1160px)}h1{font-size:3.55rem}.nav{padding-left:12px}.brand span{display:none}.actions .btn{width:100%}.visual{min-height:330px}.cardlogo{width:86%}.price{padding:22px}.checkout{padding:20px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav"><div class="brand"><div class="logo">C</div><span>ChimeraMC</span></div><div class="links"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="btn primary shop" href="#pricing">Get access</a></div></div></nav>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <div class="pill"><span class="dot"></span> Access available now</div>
+    <h1>ChimeraMC.<br><span class="grad">Built cleaner.</span></h1>
+    <p>A custom storefront for ChimeraMC. Pick monthly or lifetime access, use your affiliate referral when applicable, and continue into the secure SellApp payment flow.</p>
+    <div class="actions"><a class="btn primary" href="#pricing">Choose a plan</a><a class="btn" href="https://chimeramc.sell.app/customer-portal/affiliates" target="_blank" rel="noopener">Affiliate portal</a></div>
+  </div>
+  <div class="visual"><div class="glow"></div><div class="cardlogo"><img src="https://chimeramc.sell.app/_next/static/media/logo.b0c8507c.png" alt="ChimeraMC logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="fallback" style="display:none">C</div></div></div>
+</div>
+
+<section id="features"><div class="wrap section">
+  <div class="section-head"><div class="pill">Why this store</div><h2>Everything important, without the outdated storefront look.</h2><p>Clear pricing, a custom checkout handoff, mobile support, and affiliate referral forwarding.</p></div>
+  <div class="grid">
+    <article class="feature"><b>Custom storefront</b><p>The site is fully branded instead of looking like a default marketplace template.</p></article>
+    <article class="feature"><b>Secure payment handoff</b><p>Your card details are handled by SellApp and its payment providers, not stored on this website.</p></article>
+    <article class="feature"><b>Affiliate friendly</b><p>Affiliate parameters from this site are forwarded into the SellApp purchase URL so referral attribution can continue.</p></article>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap section">
+  <div class="section-head"><div class="pill">Pricing</div><h2>Choose your access.</h2><p>Both buttons open a cleaner pre-checkout here first, then hand payment to SellApp.</p></div>
+  <div class="prices">
+    <article class="price"><div class="plan">Monthly</div><div class="money">$6 <span>per month</span></div><p>One month of ChimeraMC access.</p><div class="checks"><div>Full key</div><div>One month access</div><div>Secure checkout</div></div><button class="btn wide" data-plan="monthly" data-price="$6" data-url="https://chimeramc.sell.app/product/month">Buy monthly</button></article>
+    <article class="price popular"><span class="badge">BEST VALUE</span><div class="plan">Lifetime</div><div class="money">$15 <span>one time</span></div><p>Lifetime ChimeraMC access with one payment.</p><div class="checks"><div>Full key</div><div>Lifetime access</div><div>Secure checkout</div></div><button class="btn primary wide" data-plan="lifetime" data-price="$15" data-url="https://chimeramc.sell.app/product/lifetime">Get lifetime</button></article>
+  </div>
+</div></section>
+
+<section><div class="wrap section">
+  <div class="section-head"><div class="pill">How it works</div><h2>Three steps.</h2></div>
+  <div class="steps"><article class="step"><h3>1. Pick a plan</h3><p>Choose monthly or lifetime access.</p></article><article class="step"><h3>2. Add checkout info</h3><p>Enter your email and coupon if you have one.</p></article><article class="step"><h3>3. Pay securely</h3><p>You are handed to SellApp for the actual payment and delivery flow.</p></article></div>
+</div></section>
+
+<section id="faq"><div class="wrap section">
+  <div class="section-head"><div class="pill">FAQ</div><h2>The stuff people ask before buying.</h2></div>
+  <div class="faq">
+    <details><summary>Does affiliate tracking still work?</summary><p>This site forwards the affiliate or aff parameter from the page URL into the SellApp product URL. SellApp also documents affiliate support for its checkout system.</p></details>
+    <details><summary>Does this site store card information?</summary><p>No. Payment details are handled by SellApp and the payment provider.</p></details>
+    <details><summary>Can I share this website in Discord?</summary><p>Yes. This is a normal public website once deployed.</p></details>
+    <details><summary>Where can affiliates view their earnings?</summary><p>Use the ChimeraMC SellApp affiliate portal linked at the top of the site.</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap footer"><div>© <span id="year"></span> ChimeraMC.</div><div><a href="https://chimeramc.sell.app/customer-portal/affiliates" target="_blank" rel="noopener">Affiliate portal</a></div></div></footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="checkout" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="checkout-head"><div><div class="pill">Secure checkout</div><h3 id="checkoutTitle" style="margin-top:12px">Complete your order</h3></div><button class="close" id="close" aria-label="Close">×</button></div>
+    <div class="summary"><div><b id="planName">Lifetime</b><div style="color:var(--muted);font-size:.88rem;margin-top:3px">ChimeraMC access</div></div><b id="planPrice">$15</b></div>
+    <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+    <div class="field"><label for="coupon">Coupon code, optional</label><input id="coupon" type="text" autocomplete="off" placeholder="Enter coupon code"></div>
+    <div class="safe">Your payment information is not collected on this page. Continue to SellApp to choose the available payment method and finish securely.</div>
+    <button class="btn primary wide" id="continue">Continue securely</button>
+  </div>
+</div>
+
+<script>
+const modal=document.getElementById('modal'),planName=document.getElementById('planName'),planPrice=document.getElementById('planPrice'),email=document.getElementById('email'),coupon=document.getElementById('coupon'),cont=document.getElementById('continue');
+let productUrl='';
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('[data-plan]').forEach(b=>b.addEventListener('click',()=>{productUrl=b.dataset.url;planName.textContent=b.dataset.plan[0].toUpperCase()+b.dataset.plan.slice(1);planPrice.textContent=b.dataset.price;modal.classList.add('open');modal.setAttribute('aria-hidden','false');setTimeout(()=>email.focus(),50)}));
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}
+document.getElementById('close').onclick=closeModal;modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+cont.addEventListener('click',()=>{const u=new URL(productUrl);u.searchParams.set('locale','en');u.searchParams.set('store','chimeramc');u.searchParams.set('quantity','1');if(email.value.trim())u.searchParams.set('email',email.value.trim());if(coupon.value.trim())u.searchParams.set('coupon',coupon.value.trim());const q=new URLSearchParams(location.search);const aff=q.get('affiliate')||q.get('aff');if(aff)u.searchParams.set('affiliate',aff);location.href=u.toString()});
+</script>
+</body>
+</html>
